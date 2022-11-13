@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 //require('dotenv/config');
+var args = process.argv.slice(2);
 ////
 // get port from start script
 //var args = process.argv.slice(2);
@@ -37,4 +38,5 @@ app.use('/images', imageRoutes);
 console.log("Port!")
 //console.log(args[1])
 // listen to request
-app.listen(8000)
+//app.listen(8000)
+app.listen(args[1])
