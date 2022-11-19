@@ -19,7 +19,6 @@ const corsOpts = {
 
 app.use(cors(corsOpts));
 
-//test
 // connect to db
 mongoose.connect('mongodb+srv://ripal:nopassword@cluster0.wazghlk.mongodb.net/?retryWrites=true&w=majority',
     () => {
