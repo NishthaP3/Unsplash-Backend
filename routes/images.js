@@ -39,9 +39,9 @@ router.post('/delete', async (req, res) => {
 //})
 
 
-//router.post('/update', async (req, res) => {
-//    await Task.findOneAndUpdate({_id: req.body._id}, {"task": req.body.task, "description": req.body.description});
- //   res.json({ message: 'Task updated successfully' });
-//})
+router.post('/update', async (req, res) => {
+    await Image.findOneAndUpdate({_id: req.body._id}, {"url": req.body.url, "label": req.body.label});
+    res.json({ message: 'Image updated successfully' });
+})
 
 module.exports = router;
