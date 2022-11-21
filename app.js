@@ -3,8 +3,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-//require('dotenv/config');
-
+require('dotenv/config');
+var args = process.argv.slice(2);
+////
 // get port from start script
 //var args = process.argv.slice(2);
 
@@ -17,7 +18,6 @@ const corsOpts = {
 };
 
 app.use(cors(corsOpts));
-
 
 // connect to db
 mongoose.connect('mongodb+srv://ripal:nopassword@cluster0.wazghlk.mongodb.net/?retryWrites=true&w=majority',
@@ -35,6 +35,7 @@ const imageRoutes = require('./routes/images');
 
 app.use('/images', imageRoutes);
 console.log("Port!")
-//console.log(args[1])
+console.log(args[1])
 // listen to request
-app.listen(8000)
+//app.listen(8000)
+app.listen(args[1], '0.0.0.0')
